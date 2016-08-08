@@ -14,14 +14,15 @@
     <script type="text/javascript">
       $(document).ready(function() {
     $('#example').DataTable( {
-        "ajax": "../ChenHaiYue",
+        "ajax": "../YangShuLin",
         columns: [
         { data: 'galleryurl' },
         { data: 'title' },
             {data:"location"},
         { data: 'startttime' },
             {data: "quantitysold"},
-            {data:"currentprice"}
+            {data:"currentprice"},
+                {data:"currency"}
     ]
     } );
 } );
@@ -87,7 +88,7 @@
     <div class="row vertical-center-row">
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Product Listed In Past 7 Days
+        Product Listed In The Past 7 Days
         </div>
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -110,7 +111,6 @@
                 <th>StartTime</th>
                 <th>QuantitySold</th>
                 <th>CurrentPrice</th>
-                <th>Currency</th>
 
             </tr>
         </tfoot>

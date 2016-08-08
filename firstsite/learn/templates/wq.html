@@ -19,9 +19,10 @@
         { data: 'galleryurl' },
         { data: 'title' },
             {data:"location"},
-        { data: 'starttime' },
+        { data: 'startttime' },
             {data: "quantitysold"},
-            {data:"currentprice"}
+            {data:"currentprice"},
+                {data:"currency"}
     ]
     } );
 } );
@@ -87,7 +88,7 @@
     <div class="row vertical-center-row">
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Product
+        Product Listed In The Past 7 Days
         </div>
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -98,6 +99,7 @@
                 <th>StartTime</th>
                 <th>QuantitySold</th>
                 <th>CurrentPrice</th>
+                <th>Currency</th>
 
             </tr>
         </thead>
@@ -109,6 +111,7 @@
                 <th>StartTime</th>
                 <th>QuantitySold</th>
                 <th>CurrentPrice</th>
+                <th>Currency</th>
 
             </tr>
         </tfoot>

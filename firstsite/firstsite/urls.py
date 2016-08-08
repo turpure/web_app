@@ -30,4 +30,8 @@ urlpatterns = [
     url(r'^WuQiong/', learn_views.WuQiong, name='WuQing'),
     url(r'^chy/', learn_views.chy, name='chy'),
     url(r'^ChenHaiYue/', learn_views.ChenHaiYue, name='ChenHaiYue'),
+    url(r'^ysl/', learn_views.ysl, name='ysl'),
+    url(r'^YangShuLin/', learn_views.YangShuLin, name='YangShuLin'),
+    url(r'^ymm/', learn_views.ymm, name='ymm'),
+    url(r'^YangManMan/', learn_views.YangManMan, name='YangManMan'),
 ]

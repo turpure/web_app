@@ -64,11 +64,21 @@ def chy(request):
     return render(request, 'chy.html')
 
 
-def ChenHaiYue(request):
+def YangShuLin(request):
     response_data = dict()
-    response_data['data'] = [item for item in get_data('chy')]
+    response_data['data'] = [item for item in get_data('ysl')]
     return JsonResponse(response_data)
 
 
-def chy(request):
-    return render(request, 'chy.html')
+def ysl(request):
+    return render(request, 'ysl.html')
+
+
+def YangManMan(request):
+    response_data = dict()
+    response_data['data'] = [item for item in get_data('ymm')]
+    return JsonResponse(response_data)
+
+
+def ymm(request):
+    return render(request, 'ymm.html')
