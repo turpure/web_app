@@ -82,3 +82,13 @@ def YangManMan(request):
 
 def ymm(request):
     return render(request, 'ymm.html')
+
+
+def SongXianZhong(request):
+    response_data = dict()
+    response_data['data'] = [item for item in get_data('sxz')]
+    return JsonResponse(response_data)
+
+
+def sxz(request):
+    return render(request, 'sxz.html')

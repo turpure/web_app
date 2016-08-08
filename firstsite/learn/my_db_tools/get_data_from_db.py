@@ -4,7 +4,7 @@ import  MySQLdb
 
 
 def get_data(owner):
-    query = "select galleryurl,title,location,startttime,quantitysold,currentprice,itemid,currency from %s_kw_items where quantitysold+0 > 0 and datediff(curdate,startttime)<8" % owner
+    query = "select galleryurl,title,location,startttime,quantitysold,currentprice,itemid,currency from %s_kw_items where quantitysold+0 > 0 and datediff(curdate,startttime)<21" % owner
     try:
         con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='',db='ebaydata')
         cur = con.cursor(MySQLdb.cursors.DictCursor)
@@ -22,4 +22,4 @@ def get_data(owner):
 
 
 if __name__ == "__main__":
-    print [ i for i in get_data("sxb")]
+    print [ i for i in get_data("chy")]
