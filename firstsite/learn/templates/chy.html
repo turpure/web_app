@@ -25,7 +25,9 @@
         { data: 'startttime' },
             {data: "quantitysold"},
             {data:"currentprice"},
-                {data:"currency"}
+                {data:"currency"},
+                {data:"kw"},
+            {data:"curdate"}
     ],
          columnDefs: [ {
             orderable: false,
@@ -65,7 +67,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">KeyWords <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="../key_words">KeyWords <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Products</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Owner <span class="caret"></span></a>
@@ -122,6 +124,8 @@
                 <th>QuantitySold</th>
                 <th>CurrentPrice</th>
                 <th>Currency</th>
+                <th>KeyWords</th>
+                <th>CreatedDate</th>
 
             </tr>
         </thead>
@@ -134,6 +138,8 @@
                 <th>QuantitySold</th>
                 <th>CurrentPrice</th>
                 <th>Currency</th>
+                <th>KeyWords</th>
+                <th>CreatedDate</th>
 
             </tr>
         </tfoot>

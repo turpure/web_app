@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 from django.http import HttpResponse
 from django.shortcuts import render
-from my_db_tools.get_data_from_db import get_data
+from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days
 from django.http import JsonResponse
 
 
@@ -30,7 +30,7 @@ def home(request):
 def product(request):
     # return json data
     response_data = dict()
-    response_data['data'] = [item for item in get_data('wq')]
+    response_data['data'] = [item for item in get_data_20_days('wq')]
     return JsonResponse(response_data)
 
 
@@ -86,9 +86,21 @@ def ymm(request):
 
 def SongXianZhong(request):
     response_data = dict()
-    response_data['data'] = [item for item in get_data('sxz')]
+    response_data['data'] = [item for item in get_data_20_days('sxz')]
     return JsonResponse(response_data)
 
 
 def sxz(request):
     return render(request, 'sxz.html')
+
+
+def key_words_api(request):
+    response_data = dict()
+    response_data['data'] = [kw for kw in get_kw_data()]
+    # response_data = [kw for kw in get_kw_data()]
+    return JsonResponse(response_data)
+
+
+def key_words(request):
+    return render(request, 'key_words.html')
+

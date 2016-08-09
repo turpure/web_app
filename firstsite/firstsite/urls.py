@@ -36,4 +36,6 @@ urlpatterns = [
     url(r'^YangManMan/', learn_views.YangManMan, name='YangManMan'),
     url(r'^sxz/', learn_views.sxz, name='sxz'),
     url(r'^SongXianZhong/', learn_views.SongXianZhong, name='SongXianZhong'),
+    url(r'^key_words_api/', learn_views.key_words_api, name='key_words_api'),
+    url(r'^key_words/', learn_views.key_words, name='key_words')
 ]
