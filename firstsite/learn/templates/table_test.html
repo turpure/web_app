@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeTest</title>
+    <title>Title</title>
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.css" rel="stylesheet"/>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-table/1.9.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+        })
+    </script>
 </head>
 <body>
-    <span class="container">
+<span class="container">
         <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -41,23 +49,12 @@
     <div class="row vertical-center-row">
     <div class="panel   panel-primary">
     <div class="panel-heading"></div>
-    <table class="table table-bordered">
-   <tr>
-       <th>创建人</th>
-       <th>关键字</th>
-       <th>创建日期</th>
-   </tr>
-       {% for i in test %}
-   <tr>
-           <td>{{ i.owner }}</td>
-           <td>{{ i.key_words }}</td>
-           <td>{{ i.curdate }}</td>
-       {% endfor %}
-   </tr>
-   </table>
+    <table id="tab" data-toggle="table" data-url="key_words_json" data-pagination=true data-search=true data-maintain-selected=true>
+
+</table>
 </div>
 </div>
     </div>
-</body>
 
+</body>
 </html>

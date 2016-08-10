@@ -20,7 +20,8 @@ from learn import views as learn_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/', learn_views.home, name='home'),
-    url(r'^index/', learn_views.index, name='index'),
+    url(r'^index/$', learn_views.index, name='index'),
+    url(r'^index/key_words_json', learn_views.key_words_json, name='test_kw'),
     url(r'^add/$', learn_views.add, name='add'),
     url(r'^add/(\d+)/(\d+)/$', learn_views.add2, name='add2'),
     url(r'^product/$', learn_views.product, name='product'),

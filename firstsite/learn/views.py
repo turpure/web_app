@@ -4,10 +4,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days
 from django.http import JsonResponse
-
+import json
 
 def index(request):
-    return render(request, 'index.html')
+    # return render(request, 'index.html')
+    return render(request, 'bootstrap_table_test.html')
 
 
 def add(request):
@@ -23,15 +24,16 @@ def add2(request, a, b):
 
 
 def home(request):
-    # test_list = [item for item in get_data("sxb")]
-    return render(request, 'home_test.html')
+    test_list = [item for item in get_kw_data()]
+    return render(request, 'home_test.html',{'test':test_list})
 
 
 def product(request):
     # return json data
-    response_data = dict()
-    response_data['data'] = [item for item in get_data_20_days('wq')]
-    return JsonResponse(response_data)
+    # response_data = dict()
+    data = [item for item in get_data_20_days('wq')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data,content_type='application/json; charset=utf8')
 
 
 def ShangXianBei(request):
@@ -99,6 +101,12 @@ def key_words_api(request):
     response_data['data'] = [kw for kw in get_kw_data()]
     # response_data = [kw for kw in get_kw_data()]
     return JsonResponse(response_data)
+
+
+def key_words_json(request):
+    data = [kw for kw in get_kw_data()]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
 
 def key_words(request):

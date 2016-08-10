@@ -50,6 +50,7 @@ def get_kw_data():
         cur.execute(query)
         for kw in cur.fetchall():
             kw['key_words'] = unicode(kw['key_words'], errors='replace')
+            kw['curdate'] = str(kw['curdate'])[:10]
             yield kw
     except Exception as e:
         print e

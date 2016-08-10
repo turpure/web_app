@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeTest</title>
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -9,7 +11,7 @@
    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <span class="container">
+<span class="container">
         <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -37,27 +39,5 @@
       </div>
     </nav>
     </span>
-    <div class="container container-table">
-    <div class="row vertical-center-row">
-    <div class="panel   panel-primary">
-    <div class="panel-heading"></div>
-    <table class="table table-bordered">
-   <tr>
-       <th>创建人</th>
-       <th>关键字</th>
-       <th>创建日期</th>
-   </tr>
-       {% for i in test %}
-   <tr>
-           <td>{{ i.owner }}</td>
-           <td>{{ i.key_words }}</td>
-           <td>{{ i.curdate }}</td>
-       {% endfor %}
-   </tr>
-   </table>
-</div>
-</div>
-    </div>
 </body>
-
 </html>
