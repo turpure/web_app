@@ -6,8 +6,14 @@ from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days
 from django.http import JsonResponse
 import json
 
+
 def index(request):
-    # return render(request, 'index.html')
+    return render(request, 'index.html')
+    # return render(request, 'bootstrap_table_test.html')
+
+
+def table_test(request):
+    # return render(request, 'home.html')
     return render(request, 'bootstrap_table_test.html')
 
 
@@ -30,10 +36,11 @@ def home(request):
 
 def product(request):
     # return json data
-    # response_data = dict()
-    data = [item for item in get_data_20_days('wq')]
-    response_data = json.dumps(data)
-    return HttpResponse(response_data,content_type='application/json; charset=utf8')
+    response_data = dict()
+    response_data['data'] = [item for item in get_data_20_days('wq')]
+    # response_data = json.dumps(data)
+    return JsonResponse(response_data)
+    # return HttpResponse(response_data,content_type='application/json; charset=utf8')
 
 
 def ShangXianBei(request):
