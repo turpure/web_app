@@ -43,7 +43,7 @@ def get_data_20_days(owner):
 
 
 def get_kw_data():
-    query = "select Nid,key_words,owner,curdate from category_kw_dict"
+    query = "select Nid,key_words,owner,curdate from category_kw_dict order by nid desc"
     try:
         con = MySQLdb.connect(host='192.168.0.134',user='root',passwd='',db='ebaydata')
         cur = con.cursor(MySQLdb.cursors.DictCursor)

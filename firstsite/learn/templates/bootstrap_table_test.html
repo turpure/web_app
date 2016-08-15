@@ -17,42 +17,119 @@
      <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
 <script>
     $(function () {
+
+        function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+            // Only send the token to relative URLs i.e. locally.
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    }
+});
        $("#btn_add").click(function () {
       $("#myModalLabel").text("Add");
       $('#myModal').modal();
     });
+        $("#btn_submit").click(function () {
+            var owner = $("#txt_owner").val();
+            var kw = $("#txt_kw").val();
+            $.ajax({
+                url:'add_key_words/',
+                data:{
+                  owner:owner,
+                    kw:kw
+                },
+                type:'post',
+                dataType:'text'
+            })
+            alert("Confirm save the data?");
+            window.location.reload();
+        });
+        $("input[type='checkbox']").click(function () {
+            alert('it happens');
+
+        });
     });
 </script>
 </head>
 <body>
 <span class="container">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">KeyWords</a></li>
-              <li><a href="#">Stores</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">MetaPro</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="../table">KeyWords <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Products</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Owner <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../sxb">ShangXianBei</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../wq">WuQiong</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../chy">ChenhaiYue</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../ysl">YangShuLin</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../ymm">YangManMan</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sxz">SongXianZhong</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
-      </div>
-    </nav>
-    </span>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Setting</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Singin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</span>
+
     <div class="container container-table">
     <div class="row vertical-center-row">
     <div class="panel   panel-primary">
@@ -82,10 +159,10 @@
     <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="key_words_json" data-pagination=true data-search=true data-maintain-selected=true data-show-export="true">
             <thead>
         <tr class="success">
-            <th data-field="Nid" data-checkbox="true" >编号</th>
-            <th data-field="owner"  data-editable="true">创建人</th>
-            <th data-field="key_words" data-editable="true"  >关键字</th>
-            <th data-field="curdate"  data-editable="true" >创建日期</th>
+            <th data-field="Nid" data-checkbox="true"  >编号</th>
+            <th data-field="owner"  data-editable="true" data-sortable="true">创建人</th>
+            <th data-field="key_words" data-editable="true"  data-sortable="true" >关键字</th>
+            <th data-field="curdate"  data-editable="true" data-sortable="true" >创建日期</th>
         </tr>
     </thead>
 </table>
@@ -101,15 +178,18 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body">
-
+            <form method="post">
+                {% csrf_token %}
           <div class="form-group">
+
             <label for="txt_departmentname">创建人</label>
-            <input type="text" name="txt_departmentname" class="form-control" id="txt_departmentname" placeholder="名字简写">
+            <input type="text" name="txt_owner" class="form-control" id="txt_owner" placeholder="名字简写">
           </div>
           <div class="form-group">
             <label for="txt_parentdepartment">关键字</label>
-            <input type="text" name="txt_parentdepartment" class="form-control" id="txt_parentdepartment" placeholder="不超过50个字符">
-        </div>
+            <input type="text" name="txt_kw" class="form-control" id="txt_kw" placeholder="不超过50个字符">
+          </div>
+            </form>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
           <button type="button" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>保存</button>

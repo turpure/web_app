@@ -3,6 +3,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days
+from my_db_tools.change_data_in_db import  insert_kw
 from django.http import JsonResponse
 import json
 
@@ -37,10 +38,10 @@ def home(request):
 def product(request):
     # return json data
     response_data = dict()
-    response_data['data'] = [item for item in get_data_20_days('wq')]
-    # response_data = json.dumps(data)
-    return JsonResponse(response_data)
-    # return HttpResponse(response_data,content_type='application/json; charset=utf8')
+    data = [item for item in get_data_20_days('wq')]
+    response_data = json.dumps(data)
+    # return JsonResponse(response_data)
+    return HttpResponse(response_data,content_type='application/json; charset=utf8')
 
 
 def ShangXianBei(request):
@@ -118,4 +119,19 @@ def key_words_json(request):
 
 def key_words(request):
     return render(request, 'key_words.html')
+
+
+def add_key_words(request):
+    response_data = dict()
+    if request.method == "POST":
+        # response_data['data'] = [{"msg": "success"}]
+        owner = request.POST.get('owner')
+        kw = request.POST.get('kw')
+        # response_data['data'] = [{"kw": kw, "owner": owner}]
+        insert_kw(owner, kw)
+        return JsonResponse(response_data)
+    else:
+        response_data['data'] = [{"msg": "Error! Please Post!"}]
+        return JsonResponse(response_data)
+
 
