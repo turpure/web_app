@@ -75,10 +75,6 @@
                  title:'OPERATE',
              },]
           });
-            $('#button').click(function () {
-                alert('getSelections:' + JSON.stringify($('#tab').bootstrapTable('getSelections')));
-            })
-
 
         });
     </script>
@@ -159,9 +155,7 @@
                 <option value="selected">Export Selected</option>
             </select>
         </div>
-             <div id="tool_bar">
-            <button id="button" class="btn btn-default">getSelections</button>
-        </div>
+             
             <table id="tab"></table>
 {#    <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="product" data-pagination=true data-search=true data-click-to-select="true" data-show-export="true">#}
 {#            <thead>#}
