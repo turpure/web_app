@@ -40,45 +40,11 @@ $.ajaxSetup({
         }
     }
 });
-        function operateFormatter(value, row, index) {
-        return [
-            '<a class="like" href="javascript:void(0)" title="I Want it">',
-            '<i class="glyphicon glyphicon-heart-empty"></i>',
-            '</a>  ',
-            '<a class="remove" href="javascript:void(0)" title="Go away">',
-            '<i class="glyphicon glyphicon-remove"></i>',
-            '</a>'
-        ].join('');
-    }
 
         $(function () {
 
-            operateEvents = {
-        'click .like': function (e, value, row, index) {
-            $.ajax({
-                url:'operation_wanted',
-                data:{
-                    itemid: row.itemid,
-                    owner: row.owner,
-                },
-                type:'post',
-            });
-            alert('Do you really want row: ' + row.itemid + "?");
-            $('#tab').bootstrapTable('refresh');
-{#            window.location.reload();#}
-
-        },
-        'click .remove': function (e, value, row, index) {
-            $('#tab').bootstrapTable('remove', {
-                field: 'id',
-                values: [row.id]
-            });
-        }
-    };
-
-
           $('#tab').bootstrapTable({
-              url:'product',
+              url:'wanted_json',
               toggle:'table',
               pagination:'true',
               search:'true',
@@ -99,51 +65,17 @@ $.ajaxSetup({
                  sortable:'true',
 
              },{
-                 field:'location',
-                 title:'LOCATION',
-                 sortable:'true',
-             },{
-                 field:'startttime',
-                 title:'STARTTIME',
-                 sortable:'true',
-             },{
-                 field:'quantitysold',
-                 title:'SOLD',
-                 sortable:'true',
-             },{
-                 field:'currentprice',
-                 title:'PRICE',
-                 sortable:'true',
-             },{
-                 field:'currency',
-                 title:'CURRENCY',
-                 sortable:'true',
-             },{
-                 field:'kw',
-                 title:'KeyWords',
-                 sortable:'true',
-             },{
                  field:'curdate',
                  title:'CreatedDate',
                  sortable:'true',
              },{
-                 field:'pstatus',
-                 title:'STATUS',
-                 sortable:true,
-             },{
-                 field:'operate',
-                 title:'OPERATE',
-                 events: operateEvents,
-                 formatter:operateFormatter,
-             },{
-                 field:'itemid',
-                 title:'ITEMID',
-                 visible:false,
-             },{
                  field:'owner',
                  title:'OWNER',
-                 visible:false,
-             }]
+
+             },{
+                 field:'sku',
+                 title:'SKU'
+             },]
           });
         });
     </script>
@@ -220,30 +152,12 @@ $.ajaxSetup({
         <h1>Export</h1>
         <div id="toolbar" class="btn-group">
             <select class="form-control">
-{#                <option value="">Export Basic</option>#}
-{#                <option value="all">Export All</option>#}
                 <option value="selected">Export Selected</option>
             </select>
         </div>
 
             <table id="tab"></table>
-{#    <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="product" data-pagination=true data-search=true data-click-to-select="true" data-show-export="true">#}
-{#            <thead>#}
-{#        <tr class="primary">#}
-{#            <th data-field="state" data-checkbox="true"></th>#}
-{#            <th data-field="galleryurl" >IMAGE</th>#}
-{#            <th data-field="title"  data-sortable="true" >TITLE</th>#}
-{#            <th data-field="location" data-sortable="true" >LOCATION</th>#}
-{#            <th data-field="startttime" data-sortable="true" >STARTTIME</th>#}
-{#            <th data-field="quantitysold" data-sortable="true" >SOLD</th>#}
-{#            <th data-field="currentprice" data-sortable="true" >PRICE</th>#}
-{#            <th data-field="currency" data-sortable="true" >CURRENCY</th>#}
-{#            <th data-field="kw" data-sortable="true" >KEYWORDS</th>#}
-{#            <th data-field="curdate" data-sortable="true" >CREATEDDATE</th>#}
-{##}
-{##}
-{#        </tr>#}
-{#    </thead>#}
+
 </table>
 </div>
 </div>

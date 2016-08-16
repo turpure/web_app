@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 from django.http import HttpResponse
 from django.shortcuts import render
-from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days
+from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days, wanted_product,get_wanted
 from my_db_tools.change_data_in_db import  insert_kw
 from django.http import JsonResponse
 import json
@@ -38,7 +38,7 @@ def home(request):
 def product(request):
     # return json data
     response_data = dict()
-    data = [item for item in get_data_20_days('wq')]
+    data = [item for item in get_data('wq')]
     response_data = json.dumps(data)
     # return JsonResponse(response_data)
     return HttpResponse(response_data,content_type='application/json; charset=utf8')
@@ -135,3 +135,25 @@ def add_key_words(request):
         return JsonResponse(response_data)
 
 
+def operation_wanted(request):
+    response_data = dict()
+    if request.method == "POST":
+        # response_data['data'] = [{"msg": "success"}]
+        itemid = request.POST.get('itemid')
+        owner = request.POST.get('owner')
+        wanted_product(itemid, owner)
+        response_data['data'] = [{"itemid": itemid, "owner": owner}]
+        return JsonResponse(response_data)
+    else:
+        response_data['data'] = [{"msg": "Error! Please Post!"}]
+        return JsonResponse(response_data)
+
+
+def wanted(request):
+    return render(request, 'wanted.html')
+
+
+def wanted_json(requset):
+    data = [kw for kw in get_wanted()]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')

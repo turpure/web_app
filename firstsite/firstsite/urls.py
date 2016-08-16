@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^table/key_words_json', learn_views.key_words_json, name='test_kw'),
     url(r'^add/$', learn_views.add, name='add'),
     url(r'^add/(\d+)/(\d+)/$', learn_views.add2, name='add2'),
+    url(r'^index/operation_wanted', learn_views.operation_wanted, name='operation_wanted'),
     url(r'^index/product', learn_views.product, name='product'),
     url(r'^index/ShangXianBei',learn_views.ShangXianBei,name="SXB"),
     url(r'^sxb/', learn_views.sxb, name='sxb'),
@@ -42,5 +43,7 @@ urlpatterns = [
     url(r'^SongXianZhong/', learn_views.SongXianZhong, name='SongXianZhong'),
     url(r'^key_words_api/', learn_views.key_words_api, name='key_words_api'),
     url(r'^key_words/', learn_views.key_words, name='key_words'),
-    url(r'^table/add_key_words/',learn_views.add_key_words, name='add_key_words')
+    url(r'^table/add_key_words/',learn_views.add_key_words, name='add_key_words'),
+    url(r'^wanted/$', learn_views.wanted, name='wanted'),
+    url(r'^wanted/wanted_json',learn_views.wanted_json,name='wanted_json')
 ]
