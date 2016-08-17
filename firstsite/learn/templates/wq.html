@@ -1,59 +1,158 @@
+{% load static %}
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Show</title>
-    <link href="//cdn.bootcss.com/datatables/1.10.12/css/dataTables.bootstrap.css" rel="stylesheet">
-{#    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">#}
-    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-{#    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">#}
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/datatables/1.10.12/js/dataTables.bootstrap.js"></script>
-{#    <script src="/static/jquery-1.12.3.js"></script>#}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.css" rel="stylesheet"/>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
+ <script src="{% static 'assets/bootstrap-table/src/extensions/editable/bootstrap-table-editable.js' %}"></script>
+    <script src="{% static 'assets/bootstrap-table/src/extensions/export/bootstrap-table-export.js' %}"></script>
+<script src="http://cdn.bootcss.com/bootstrap-table/1.9.1/locale/bootstrap-table-zh-CN.min.js"></script>
+     <script src="http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+{#    <script src="http://issues.wenzhixin.net.cn/bootstrap-table/ga.js"></script>#}
+    <script>
+         function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
-    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-    $('#example').DataTable( {
-        "ajax": "../WuQiong",
-        columns: [
-        { data: 'galleryurl' },
-        { data: 'title' },
-            {data:"location"},
-        { data: 'startttime' },
-            {data: "quantitysold"},
-            {data:"currentprice"},
-                {data:"currency"},
-                {data:"kw"},
-            {data:"curdate"}
-    ],
-         columnDefs: [ {
-            orderable: false,
-            className: 'select-checkbox',
-            targets:   0
-        } ],
-         select: {
-            style: 'os',
-            selector: 'td:first-child' // no row selection on last column
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+            // Only send the token to relative URLs i.e. locally.
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    }
+});
+        function operateFormatter(value, row, index) {
+        return [
+            '<a class="like" href="javascript:void(0)" title="I Want it">',
+            '<i class="glyphicon glyphicon-heart-empty"></i>',
+            '</a>  ',
+            '<a class="remove" href="javascript:void(0)" title="Go away">',
+            '<i class="glyphicon glyphicon-remove"></i>',
+            '</a>'
+        ].join('');
+    }
+
+        $(function () {
+
+            operateEvents = {
+        'click .like': function (e, value, row, index) {
+            $.ajax({
+                url:'operation_wanted',
+                data:{
+                    itemid: row.itemid,
+                    owner: row.owner,
+                },
+                type:'post',
+            });
+            alert('Do you really want row: ' + JSON.stringify(row) + "?");
+            $('#tab').bootstrapTable('refresh');
+{#            window.location.reload();#}
+
         },
-    } );
-           $('button').click( function() {
-        var data = table.$('input, select').serialize();
-        alert(
-            "The following data would have been submitted to the server: \n\n"+
-            data.substr( 0, 120 )+'...'
-        );
-        return false;
-    } );
-} );
+        'click .remove': function (e, value, row, index) {
+            $('#tab').bootstrapTable('remove', {
+                field: 'id',
+                values: [row.id]
+            });
+        }
+    };
+
+
+          $('#tab').bootstrapTable({
+              url:'WuQiong',
+              toggle:'table',
+              pagination:'true',
+              search:'true',
+              showRefresh:'true',
+              showColumns:'true',
+              showExport:'true',
+              toolbar:'toolbar',
+              clickToSelect:'true',
+             columns:[{
+                 field:'state',
+                 checkbox:'true',
+             },{
+                 field:'galleryurl',
+                 title:'IMAGE',
+             },{
+                 field:'title',
+                 title:"TITLE",
+                 sortable:'true',
+
+             },{
+                 field:'location',
+                 title:'LOCATION',
+                 sortable:'true',
+             },{
+                 field:'startttime',
+                 title:'STARTTIME',
+                 sortable:'true',
+             },{
+                 field:'quantitysold',
+                 title:'SOLD',
+                 sortable:'true',
+             },{
+                 field:'currentprice',
+                 title:'PRICE',
+                 sortable:'true',
+             },{
+                 field:'currency',
+                 title:'CURRENCY',
+                 sortable:'true',
+             },{
+                 field:'kw',
+                 title:'KeyWords',
+                 sortable:'true',
+             },{
+                 field:'curdate',
+                 title:'CreatedDate',
+                 sortable:'true',
+             },{
+                 field:'pstatus',
+                 title:'STATUS',
+                 sortable:true,
+             },{
+                 field:'operate',
+                 title:'OPERATE',
+                 events: operateEvents,
+                 formatter:operateFormatter,
+             },{
+                 field:'itemid',
+                 title:'ITEMID',
+                 visible:false,
+             },{
+                 field:'owner',
+                 title:'OWNER',
+                 visible:false,
+             }]
+          });
+        });
     </script>
+
 </head>
 <body>
 <span class="container">
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    </span>
+
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -69,12 +168,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../key_words">KeyWords <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="../table">KeyWords <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Products</a></li>
+          <li><a href="../wanted">Wanted</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Owner <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="../sxb">ShangXianBei</a></li>
+            <li><a href="../sxb" id="sxb">ShangXianBei</a></li>
               <li role="separator" class="divider"></li>
             <li><a href="../wq">WuQiong</a></li>
               <li role="separator" class="divider"></li>
@@ -110,45 +210,32 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container container-table">
+</span>
+    <div class="container container-table">
     <div class="row vertical-center-row">
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        Product Listed in The Past 7 Days
+    <div class="panel   panel-primary">
+    <div class="panel-heading"></div>
+
+        <div class="container">
+        <h1>Export</h1>
+        <div id="toolbar" class="btn-group">
+            <select class="form-control">
+{#                <option value="">Export Basic</option>#}
+{#                <option value="all">Export All</option>#}
+                <option value="selected">Export Selected</option>
+            </select>
         </div>
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Location</th>
-                <th>StartTime</th>
-                <th>QuantitySold</th>
-                <th>CurrentPrice</th>
-                <th>Currency</th>
-                <th>KeyWords</th>
-                <th>CreatedDate</th>
 
-            </tr>
-        </thead>
-    <tfoot>
-            <tr>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Location</th>
-                <th>StartTime</th>
-                <th>QuantitySold</th>
-                <th>CurrentPrice</th>
-                <th>Currency</th>
-                <th>KeyWords</th>
-                <th>CreatedDate</th>
+            <table id="tab"></table>
 
-            </tr>
-        </tfoot>
-    </table>
-   </div>
-
+</table>
+</div>
+</div>
     </div>
-    </div>
+
+  </div>
+
+</div>
+
 </body>
 </html>

@@ -63,7 +63,7 @@ $.ajaxSetup({
                 },
                 type:'post',
             });
-            alert('Do you really want row: ' + row.itemid + "?");
+            alert('Do you really want row: ' + JSON.stringify(row) + "?");
             $('#tab').bootstrapTable('refresh');
 {#            window.location.reload();#}
 
@@ -174,7 +174,7 @@ $.ajaxSetup({
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Owner <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="sxb" id="sxb">ShangXianBei</a></li>
+            <li><a href="../sxb" id="sxb">ShangXianBei</a></li>
               <li role="separator" class="divider"></li>
             <li><a href="../wq">WuQiong</a></li>
               <li role="separator" class="divider"></li>

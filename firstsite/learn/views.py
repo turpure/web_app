@@ -45,9 +45,12 @@ def product(request):
 
 
 def ShangXianBei(request):
-    response_data = dict()
-    response_data['data'] = [item for item in get_data('sxb')]
-    return JsonResponse(response_data)
+    # response_data = dict()
+    # response_data['data'] = [item for item in get_data('sxb')]
+    # return JsonResponse(response_data)
+    data = [item for item in get_data('sxb')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
 
 def sxb(request):
@@ -65,9 +68,12 @@ def wq(request):
 
 
 def ChenHaiYue(request):
-    response_data = dict()
-    response_data['data'] = [item for item in get_data('chy')]
-    return JsonResponse(response_data)
+    # response_data = dict()
+    # response_data['data'] = [item for item in get_data('chy')]
+    data = [item for item in get_data('chy')]
+    response_data = json.dumps(data)
+    # return JsonResponse(response_data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
 
 def chy(request):
@@ -75,9 +81,12 @@ def chy(request):
 
 
 def YangShuLin(request):
-    response_data = dict()
-    response_data['data'] = [item for item in get_data('ysl')]
-    return JsonResponse(response_data)
+    # response_data = dict()
+    # response_data['data'] = [item for item in get_data('ysl')]
+    # return JsonResponse(response_data)
+    data = [item for item in get_data('ysl')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
 
 def ysl(request):
@@ -85,9 +94,12 @@ def ysl(request):
 
 
 def YangManMan(request):
-    response_data = dict()
-    response_data['data'] = [item for item in get_data('ymm')]
-    return JsonResponse(response_data)
+    # response_data = dict()
+    # response_data['data'] = [item for item in get_data('ymm')]
+    # return JsonResponse(response_data)
+    data = [item for item in get_data('ymm')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
 
 def ymm(request):
@@ -95,9 +107,12 @@ def ymm(request):
 
 
 def SongXianZhong(request):
-    response_data = dict()
-    response_data['data'] = [item for item in get_data_20_days('sxz')]
-    return JsonResponse(response_data)
+    # response_data = dict()
+    # response_data['data'] = [item for item in get_data_20_days('sxz')]
+    # return JsonResponse(response_data)
+    data = [item for item in get_data_20_days('sxz')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
 
 def sxz(request):
