@@ -56,14 +56,14 @@ $.ajaxSetup({
             operateEvents = {
         'click .like': function (e, value, row, index) {
             $.ajax({
-                url:'operation_wanted',
+                url:'../operation_wanted/',
                 data:{
                     itemid: row.itemid,
                     owner: row.owner,
                 },
                 type:'post',
             });
-            alert('Do you really want row: ' + JSON.stringify(row) + "?");
+            alert('Do you really want: ' + row.itemid + "?");
             $('#tab').bootstrapTable('refresh');
 {#            window.location.reload();#}
 

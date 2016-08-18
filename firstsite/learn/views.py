@@ -185,3 +185,8 @@ def wanted_json(requset):
     data = [kw for kw in get_wanted()]
     response_data = json.dumps(data)
     return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def shop(request):
+    return render(request, 'shop.html')
+

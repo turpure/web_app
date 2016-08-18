@@ -56,7 +56,7 @@ $.ajaxSetup({
             operateEvents = {
         'click .like': function (e, value, row, index) {
             $.ajax({
-                url:'operation_wanted',
+                url:'../operation_wanted/',
                 data:{
                     itemid: row.itemid,
                     owner: row.owner,
@@ -169,7 +169,7 @@ $.ajaxSetup({
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="../table">KeyWords <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="#">Shops</a></li>
           <li><a href="../wanted">Wanted</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Owner <span class="caret"></span></a>

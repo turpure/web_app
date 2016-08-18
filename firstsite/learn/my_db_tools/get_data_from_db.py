@@ -31,21 +31,22 @@ def get_data(owner):
 def get_data_20_days(owner):
     query = "select b.*,cat.kw, is_recommend.pstatus from (select galleryurl,title,location,startttime,quantitysold,currentprice,itemid,currency,curdate from %s_kw_items where quantitysold+0 > 0 and datediff(curdate,startttime)<8) as b inner JOIN %s_category_items as cat on b.itemid=cat.itemid LEFT JOIN  is_recommend on is_recommend.itemid=cat.itemid" % (owner,owner)
     try:
-        con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='',db='ebaydata')
+        con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='', db='ebaydata')
         cur = con.cursor(MySQLdb.cursors.DictCursor)
         cur.execute(query)
         for item in cur.fetchall():
-            item['title'] = unicode("<a href='http://www.ebay.com/itm/" +item['itemid'] + "' target='_Blank'>" + item['title'] + "</a>", errors='replace')
-            item['galleryurl'] = "<img src='"+ item['galleryurl'] +"' width='80' height='80'>"
+            item['title'] = unicode(
+                "<a href='http://www.ebay.com/itm/" + item['itemid'] + "' target='_Blank'>" + item['title'] + "</a>",
+                errors='replace')
+            item['galleryurl'] = "<img src='" + item['galleryurl'] + "' width='80' height='80'>"
             item['startttime'] = str(item['startttime'])
             item['quantitysold'] = str(item['quantitysold'])
             item['location'] = unicode(item['location'], errors='replace')
             item['kw'] = unicode(item['kw'], errors='replace')
+            item['owner'] = owner
             item['curdate'] = str(item['curdate'])[:10]
             if item['pstatus'] == 1:
                 item['pstatus'] = 'wanted'
-            # if item['pstatus'] is None:
-            #     item['pstatus'] = 'unknown'
             yield item
         con.close()
     except Exception as e:
@@ -90,7 +91,7 @@ def get_wanted():
         cur.execute(query)
         id_owner = cur.fetchall()
         for item in id_owner:
-            detail_query = "select title,galleryurl,itemid from " + item['owner']+ "_kw_items where itemid=%s"
+            detail_query = "select title,galleryurl,itemid from " + item['owner'] + "_kw_items where itemid=%s"
             cur.execute(detail_query, (item['itemid'],))
             detail = cur.fetchone()
             detail['title'] = unicode(
@@ -118,9 +119,10 @@ def alter_table(owner):
 
 
 if __name__ == "__main__":
-    owner = ['sxb','sxz','chy','ymm','ysl','wq']
-    for i in owner:
-        alter_table(i)
+    # owner = ['sxb','sxz','chy','ymm','ysl','wq']
+    # for i in owner:
+    #     alter_table(i)
+    print [i['owner'] for i in get_wanted()]
 
 
 
