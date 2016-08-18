@@ -119,6 +119,19 @@ def sxz(request):
     return render(request, 'sxz.html')
 
 
+def TEST(request):
+    # response_data = dict()
+    # response_data['data'] = [item for item in get_data_20_days('sxz')]
+    # return JsonResponse(response_data)
+    data = [item for item in get_data_20_days('test')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def test(request):
+    return render(request, 'test.html')
+
+
 def key_words_api(request):
     response_data = dict()
     response_data['data'] = [kw for kw in get_kw_data()]
