@@ -63,7 +63,7 @@ $.ajaxSetup({
                 },
                 type:'post',
             });
-            alert('Do you really want row: ' + JSON.stringify(row) + "?");
+            alert('Do you really want: ' + row.itemid + "?");
             $('#tab').bootstrapTable('refresh');
 {#            window.location.reload();#}
 
@@ -78,7 +78,7 @@ $.ajaxSetup({
 
 
           $('#tab').bootstrapTable({
-              url:'product',
+              url:'HS_SXB',
               toggle:'table',
               pagination:'true',
               search:'true',
@@ -110,6 +110,19 @@ $.ajaxSetup({
                  field:'quantitysold',
                  title:'SOLD',
                  sortable:'true',
+                 visible:false,
+             },{
+                 field:'deltasold',
+                 title:'DeltaSold',
+                 sortable:'true',
+             },{
+                 field:'deltahit',
+                 title:'DeltaHit',
+                 sortable:'true',
+             },{
+                 field:'deltadays',
+                 title:'DeltaDays',
+                 sortable:'true',
              },{
                  field:'currentprice',
                  title:'PRICE',
@@ -118,18 +131,22 @@ $.ajaxSetup({
                  field:'currency',
                  title:'CURRENCY',
                  sortable:'true',
+                 visible:false,
              },{
                  field:'kw',
                  title:'KeyWords',
                  sortable:'true',
+                 visible:false,
              },{
                  field:'curdate',
                  title:'CreatedDate',
                  sortable:'true',
+                 visible:false,
              },{
                  field:'pstatus',
                  title:'STATUS',
                  sortable:true,
+
              },{
                  field:'operate',
                  title:'OPERATE',
@@ -169,7 +186,7 @@ $.ajaxSetup({
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="../table">KeyWords <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Shops</a></li>
+        <li><a href="#">Products</a></li>
           <li><a href="../wanted">Wanted</a></li>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hot Sale <span class="caret"></span></a>
@@ -190,7 +207,7 @@ $.ajaxSetup({
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Newly Listed <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Owner <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="../sxb" id="sxb">ShangXianBei</a></li>
               <li role="separator" class="divider"></li>
@@ -245,23 +262,7 @@ $.ajaxSetup({
         </div>
 
             <table id="tab"></table>
-{#    <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="product" data-pagination=true data-search=true data-click-to-select="true" data-show-export="true">#}
-{#            <thead>#}
-{#        <tr class="primary">#}
-{#            <th data-field="state" data-checkbox="true"></th>#}
-{#            <th data-field="galleryurl" >IMAGE</th>#}
-{#            <th data-field="title"  data-sortable="true" >TITLE</th>#}
-{#            <th data-field="location" data-sortable="true" >LOCATION</th>#}
-{#            <th data-field="startttime" data-sortable="true" >STARTTIME</th>#}
-{#            <th data-field="quantitysold" data-sortable="true" >SOLD</th>#}
-{#            <th data-field="currentprice" data-sortable="true" >PRICE</th>#}
-{#            <th data-field="currency" data-sortable="true" >CURRENCY</th>#}
-{#            <th data-field="kw" data-sortable="true" >KEYWORDS</th>#}
-{#            <th data-field="curdate" data-sortable="true" >CREATEDDATE</th>#}
-{##}
-{##}
-{#        </tr>#}
-{#    </thead>#}
+
 </table>
 </div>
 </div>

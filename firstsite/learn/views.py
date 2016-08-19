@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 from django.http import HttpResponse
 from django.shortcuts import render
-from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days, wanted_product,get_wanted
+from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days, wanted_product,get_wanted,get_updated_date
 from my_db_tools.change_data_in_db import  insert_kw
 from django.http import JsonResponse
 import json
@@ -189,4 +189,77 @@ def wanted_json(requset):
 
 def shop(request):
     return render(request, 'shop.html')
+
+
+def hs_test(request):
+    return render(request, 'hs_test.html')
+
+
+def HS_TEST(request):
+    data = [i for i in get_updated_date('test')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def hs_sxb(request):
+    return render(request, 'hs_sxb.html')
+
+
+def HS_SXB(request):
+    data = [i for i in get_updated_date('sxb')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def hs_wq(request):
+    return render(request, 'WQ.html')
+
+
+def HS_WQ(request):
+    data = [i for i in get_updated_date('wq')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def hs_chy(request):
+    return render(request, 'chy.html')
+
+
+def HS_CHY(request):
+    data = [i for i in get_updated_date('chy')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def hs_ysl(request):
+    return render(request, 'ysl.html')
+
+
+def HS_YSL(request):
+    data = [i for i in get_updated_date('ysl')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def hs_ymm(request):
+    return render(request, 'chy.html')
+
+
+def HS_YMM(request):
+    data = [i for i in get_updated_date('ymm')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def hs_sxz(request):
+    return render(request, 'chy.html')
+
+
+def HS_SXZ(request):
+    data = [i for i in get_updated_date('sxz')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+
 

@@ -108,6 +108,41 @@ def get_wanted():
         print e
 
 
+def get_updated_date(owner):
+    query = "select b.*,cat.kw, is_recommend.pstatus " \
+            "from (select galleryurl,title,location,startttime," \
+            "quantitysold,currentprice,itemid,currency,curdate,deltasold,deltahit,deltadays from " \
+            "%s_kw_items where quantitysold+0 > 0 and datediff(curdate,startttime)<8) as b" \
+            " inner JOIN %s_category_items as cat on b.itemid=cat.itemid" \
+            " LEFT JOIN  is_recommend on is_recommend.itemid=cat.itemid" % (owner, owner)
+    try:
+        con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='', db='ebaydata')
+        cur = con.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute(query)
+        for item in cur.fetchall():
+            item['title'] = unicode(
+                "<a href='http://www.ebay.com/itm/" + item['itemid'] + "' target='_Blank'>" + item['title'] + "</a>",
+                errors='replace')
+            temp_img = "<img src='" + item['galleryurl'] + "' width='80' height='80'>"
+            item['galleryurl'] = unicode(
+                "<a href='http://www.ebay.com/itm/" + item['itemid'] + "' target='_Blank'>" + temp_img + "</a>",
+                errors='replace')
+            item['startttime'] = str(item['startttime'])
+            item['quantitysold'] = str(item['quantitysold'])
+            item['location'] = unicode(item['location'], errors='replace')
+            item['kw'] = unicode(item['kw'], errors='replace')
+            item['owner'] = owner
+            item['curdate'] = str(item['curdate'])[:10]
+            item['deltasold'] = int(item['deltasold'])
+            item['deltahit'] = int(item['deltahit'])
+            if item['pstatus'] == 1:
+                item['pstatus'] = 'wanted'
+            yield item
+        con.close()
+    except Exception as e:
+        print e
+
+
 def alter_table(owner):
     # ['sxb','sxz','chy','ymm','ysl','wq']
     query = 'alter table %s_category_items drop column  flag' % owner
@@ -122,7 +157,8 @@ if __name__ == "__main__":
     # owner = ['sxb','sxz','chy','ymm','ysl','wq']
     # for i in owner:
     #     alter_table(i)
-    print [i['owner'] for i in get_wanted()]
+    # print [i['owner'] for i in get_wanted()]
 
+    get_updated_date('test')
 
 
