@@ -60,6 +60,11 @@ urlpatterns = [
     url(r'^hs_ysl/HS_YSL', learn_views.HS_YSL, name='HS_YSL'),
     url(r'^hs_ymm/$', learn_views.hs_ymm, name='hs_ymm'),
     url(r'^hs_ymm/HS_YMM', learn_views.HS_YMM, name='HS_YMM'),
-    url(r'^hs_szx/$', learn_views.hs_sxz, name='hs_sxz'),
+    url(r'^hs_sxz/$', learn_views.hs_sxz, name='hs_sxz'),
     url(r'^hs_sxz/HS_SXZ', learn_views.HS_SXZ, name='HS_SXZ'),
+    url(r'^shop/$', learn_views.shop, name='shop'),
+    url(r'^shop/shop_json', learn_views.shop_json, name='shop_json'),
+    url(r'^shop/add_user_name', learn_views.add_user_name, name='add_user_name'),
+
+
 ]

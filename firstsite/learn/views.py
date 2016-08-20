@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 from django.http import HttpResponse
 from django.shortcuts import render
-from my_db_tools.get_data_from_db import get_data, get_kw_data, get_data_20_days, wanted_product,get_wanted,get_updated_date
-from my_db_tools.change_data_in_db import  insert_kw
+from my_db_tools.get_data_from_db import *
+from my_db_tools.change_data_in_db import insert_kw, insert_user
 from django.http import JsonResponse
 import json
 
@@ -212,7 +212,7 @@ def HS_SXB(request):
 
 
 def hs_wq(request):
-    return render(request, 'WQ.html')
+    return render(request, 'hs_wq.html')
 
 
 def HS_WQ(request):
@@ -222,7 +222,7 @@ def HS_WQ(request):
 
 
 def hs_chy(request):
-    return render(request, 'chy.html')
+    return render(request, 'hs_chy.html')
 
 
 def HS_CHY(request):
@@ -232,7 +232,7 @@ def HS_CHY(request):
 
 
 def hs_ysl(request):
-    return render(request, 'ysl.html')
+    return render(request, 'hs_ysl.html')
 
 
 def HS_YSL(request):
@@ -242,7 +242,7 @@ def HS_YSL(request):
 
 
 def hs_ymm(request):
-    return render(request, 'chy.html')
+    return render(request, 'hs_ymm.html')
 
 
 def HS_YMM(request):
@@ -252,7 +252,7 @@ def HS_YMM(request):
 
 
 def hs_sxz(request):
-    return render(request, 'chy.html')
+    return render(request, 'hs_sxz.html')
 
 
 def HS_SXZ(request):
@@ -261,5 +261,26 @@ def HS_SXZ(request):
     return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
 
+def shop(request):
+    return render(request, 'shop.html')
 
+
+def shop_json(request):
+    data = [user for user in get_shop_data()]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def add_user_name(request):
+    response_data = dict()
+    if request.method == "POST":
+        # response_data['data'] = [{"msg": "success"}]
+        owner = request.POST.get('owner')
+        user = request.POST.get('user_name')
+        response_data['data'] = [{"user": user, "owner": owner}]
+        insert_user(owner, user)
+        return JsonResponse(response_data)
+    else:
+        response_data['data'] = [{"msg": "Error! Please Post!"}]
+        return JsonResponse(response_data)
 

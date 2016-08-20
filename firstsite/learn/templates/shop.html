@@ -48,21 +48,21 @@ $.ajaxSetup({
     });
         $("#btn_submit").click(function () {
             var owner = $("#txt_owner").val();
-            var kw = $("#txt_kw").val();
+            var user_name = $("#txt_user").val();
             $.ajax({
-                url:'add_key_words/',
+                url:'add_user_name/',
                 data:{
                   owner:owner,
-                    kw:kw
+                    user_name:user_name,
                 },
                 type:'post',
                 dataType:'text'
             })
-            alert("Confirm save the data?");
-            window.location.reload();
+{#            alert("Confirm to save the data?");#}
+{#            window.location.reload();#}
         });
         $("input[type='checkbox']").click(function () {
-            alert('it happens');
+{#            alert('it happens');#}
 
         });
     });
@@ -88,12 +88,30 @@ $.ajaxSetup({
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="../table">KeyWords <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Shops</a></li>
+        <li><a href="../shop">Shops</a></li>
           <li><a href="../wanted">Wanted</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Owner <span class="caret"></span></a>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hot Sale <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="../sxb">ShangXianBei</a></li>
+            <li><a href="../hs_sxb" id="sxb">ShangXianBei</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../hs_wq">WuQiong</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../hs_chy">ChenhaiYue</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../hs_ysl">YangShuLin</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../hs_ymm">YangManMan</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../hs_sxz">SongXianZhong</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../hs_test">TEST</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Newly Listed <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../sxb" id="sxb">ShangXianBei</a></li>
               <li role="separator" class="divider"></li>
             <li><a href="../wq">WuQiong</a></li>
               <li role="separator" class="divider"></li>
@@ -157,13 +175,14 @@ $.ajaxSetup({
                 <option value="selected">Export Selected</option>
             </select>
         </div>
-    <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="key_words_json" data-pagination=true data-search=true data-maintain-selected=true data-show-export="true">
+    <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="shop_json" data-pagination=true data-search=true data-maintain-selected=true data-show-export="true">
             <thead>
         <tr class="success">
-            <th data-field="Nid" data-checkbox="true"  >编号</th>
-            <th data-field="owner"  data-editable="true" data-sortable="true">创建人</th>
-            <th data-field="key_words" data-editable="true"  data-sortable="true" >关键字</th>
-            <th data-field="curdate"  data-editable="true" data-sortable="true" >创建日期</th>
+            <th data-field="state" data-checkbox="true"  >编号</th>
+            <th data-field="owner"   >创建人</th>
+            <th data-field="user_name"  >店铺名</th>
+            <th data-field="feedbackscore"  data-sortable="true">好评数</th>
+            <th data-field="curdate" data-sortable="true" >创建日期</th>
         </tr>
     </thead>
 </table>
@@ -188,7 +207,7 @@ $.ajaxSetup({
           </div>
           <div class="form-group">
             <label for="txt_parentdepartment">关键字</label>
-            <input type="text" name="txt_kw" class="form-control" id="txt_kw" placeholder="不超过50个字符">
+            <input type="text" name="txt_user" class="form-control" id="txt_user" placeholder="不超过50个字符">
           </div>
             </form>
         <div class="modal-footer">

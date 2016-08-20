@@ -143,6 +143,22 @@ def get_updated_date(owner):
         print e
 
 
+def get_shop_data():
+    query = 'select user_name,owner,curdate,feedbackscore from shop_user_dict';
+    try:
+        con = MySQLdb.connect(host='192.168.0.134', user='root',passwd='',db='ebaydata')
+        cur = con.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute(query)
+        for user in cur.fetchall():
+            user['curdate'] = str(user['curdate'])
+            user['user_name'] = "<a href='http://www.ebay.com/usr/" + user['user_name'] + "' target='_Blank'>"\
+                                + user['user_name'] + "</a>"
+            yield user
+        con.close()
+    except Exception as e:
+        print e
+
+
 def alter_table(owner):
     # ['sxb','sxz','chy','ymm','ysl','wq']
     query = 'alter table %s_category_items drop column  flag' % owner
@@ -153,12 +169,36 @@ def alter_table(owner):
     con.close()
 
 
+def get_user_china(owner):
+    query = "select userid,feedbackscore from %s_kw_items where usersite='HongKong'" % owner
+    insert_query = 'insert into shop_user_dict (user_name, owner, curdate, feedbackscore) values (%s,%s,now(),%s) '
+    check_query = 'select * from shop_user_dict where user_name=%s'
+    try:
+        con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='', db='ebaydata')
+        cur = con.cursor()
+        cur.execute(query)
+        user_list = cur.fetchall()
+        for userid in user_list:
+            user = userid[0]
+            score = int(userid[1])
+            if cur.execute(check_query, (user,)):
+                print "%s is already in the database  " % user
+            else:
+                cur.execute(insert_query, (user, owner, score,))
+                con.commit()
+        con.close()
+    except Exception as e:
+        print e
+
+
 if __name__ == "__main__":
-    # owner = ['sxb','sxz','chy','ymm','ysl','wq']
+    # owner = ['sxb', 'sxz', 'chy', 'ymm', 'ysl', 'wq']
     # for i in owner:
-    #     alter_table(i)
+    #     get_user_china(i)
     # print [i['owner'] for i in get_wanted()]
 
-    get_updated_date('test')
+    # get_updated_date('test')
+    # pass
+    print [i for i in get_shop_data()]
 
 

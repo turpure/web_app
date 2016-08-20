@@ -3,7 +3,7 @@
 import MySQLdb
 
 
-def insert_kw(owner,kw):
+def insert_kw(owner, kw):
     query = "insert into category_kw_dict (key_words,owner,curdate) values (%s,%s, now())"
     try:
         con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='', db='ebaydata')
@@ -16,5 +16,18 @@ def insert_kw(owner,kw):
         print e
 
 
+def insert_user(owner, user):
+    query = "insert into shop_user_dict (user_name,owner, curdate) values (%s,%s, now())"
+    try:
+        con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='', db='ebaydata')
+        cur = con.cursor()
+        cur.execute(query, (user, owner,))
+        con.commit()
+        con.close()
+    except Exception as e:
+        print e
+
+
 if __name__ == "__main__":
-    insert_kw("james", "outdoor")
+    # insert_kw("james", "outdoor")
+    insert_user('test', 'lovingpets99')
