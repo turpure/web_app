@@ -45,7 +45,7 @@ $.ajaxSetup({
             '<a class="like" href="javascript:void(0)" title="I Want it">',
             '<i class="glyphicon glyphicon-heart-empty"></i>',
             '</a>  ',
-            '<a class="remove" href="javascript:void(0)" style="margin-left:30px" title="Go away">',
+            '<a class="remove" href="javascript:void(0)"  style="margin-left:30px" title="Go away">',
             '<i class="glyphicon glyphicon-remove"></i>',
             '</a>'
         ].join('');
@@ -63,11 +63,11 @@ $.ajaxSetup({
                 },
                 type:'post',
             });
-             $('#tab').bootstrapTable('remove', {
+            $('#tab').bootstrapTable('remove', {
                 field: 'itemid',
                 values: [row.itemid],
             });
-{#            alert('Do you really want: ' + row.itemid + "?");#}
+{#            alert('Do you really want row: ' + JSON.stringify(row) + "?");#}
 {#            $('#tab').bootstrapTable('refresh');#}
 {#            window.location.reload();#}
 
@@ -90,7 +90,7 @@ $.ajaxSetup({
 
 
           $('#tab').bootstrapTable({
-              url:'HS_WQ',
+              url:'SP_YMM',
               toggle:'table',
               pagination:'true',
               search:'true',
@@ -122,18 +122,9 @@ $.ajaxSetup({
                  field:'quantitysold',
                  title:'SOLD',
                  sortable:'true',
-                 visible:false,
              },{
-                 field:'deltasold',
-                 title:'DeltaSold',
-                 sortable:'true',
-             },{
-                 field:'deltahit',
-                 title:'DeltaHit',
-                 sortable:'true',
-             },{
-                 field:'deltadays',
-                 title:'DeltaDays',
+                 field:'hitcount',
+                 title:'HitCount',
                  sortable:'true',
              },{
                  field:'currentprice',
@@ -143,23 +134,15 @@ $.ajaxSetup({
                  field:'currency',
                  title:'CURRENCY',
                  sortable:'true',
-                 visible:false,
-             },{
-                 field:'kw',
-                 title:'KeyWords',
-                 sortable:'true',
-                 visible:false,
              },{
                  field:'curdate',
                  title:'CreatedDate',
                  sortable:'true',
-                 visible:false,
              },{
                  field:'pstatus',
                  title:'STATUS',
                  sortable:true,
                  visible:false,
-
              },{
                  field:'operate',
                  title:'OPERATE',
@@ -309,7 +292,23 @@ $.ajaxSetup({
         </div>
 
             <table id="tab"></table>
-
+{#    <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="product" data-pagination=true data-search=true data-click-to-select="true" data-show-export="true">#}
+{#            <thead>#}
+{#        <tr class="primary">#}
+{#            <th data-field="state" data-checkbox="true"></th>#}
+{#            <th data-field="galleryurl" >IMAGE</th>#}
+{#            <th data-field="title"  data-sortable="true" >TITLE</th>#}
+{#            <th data-field="location" data-sortable="true" >LOCATION</th>#}
+{#            <th data-field="startttime" data-sortable="true" >STARTTIME</th>#}
+{#            <th data-field="quantitysold" data-sortable="true" >SOLD</th>#}
+{#            <th data-field="currentprice" data-sortable="true" >PRICE</th>#}
+{#            <th data-field="currency" data-sortable="true" >CURRENCY</th>#}
+{#            <th data-field="kw" data-sortable="true" >KEYWORDS</th>#}
+{#            <th data-field="curdate" data-sortable="true" >CREATEDDATE</th>#}
+{##}
+{##}
+{#        </tr>#}
+{#    </thead>#}
 </table>
 </div>
 </div>

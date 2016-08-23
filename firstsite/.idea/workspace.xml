@@ -14,8 +14,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/firstsite$Test__learn_templates_home_html.coverage" NAME="Test: learn.templates.home.html Coverage Results" MODIFIED="1470125029630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/firstsite$change_data_in_db.coverage" NAME="change_data_in_db Coverage Results" MODIFIED="1471660254241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn/my_db_tools" />
-    <SUITE FILE_PATH="coverage/firstsite$get_data_from_db.coverage" NAME="get_data_from_db Coverage Results" MODIFIED="1471678671944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn/my_db_tools" />
+    <SUITE FILE_PATH="coverage/firstsite$get_data_from_db.coverage" NAME="get_data_from_db Coverage Results" MODIFIED="1471912335856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn/my_db_tools" />
+    <SUITE FILE_PATH="coverage/firstsite$change_data_in_db.coverage" NAME="change_data_in_db Coverage Results" MODIFIED="1471935966828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn/my_db_tools" />
     <SUITE FILE_PATH="coverage/firstsite$my_own_sql_tools.coverage" NAME="my_own_sql_tools Coverage Results" MODIFIED="1470270689116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
     <SUITE FILE_PATH="coverage/firstsite$views.coverage" NAME="views Coverage Results" MODIFIED="1470292481350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
   </component>
@@ -27,12 +27,12 @@
     <favorites_list name="firstsite" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/firstsite/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="467">
+              <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -41,46 +41,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learn/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="254" column="41" selection-start-line="254" selection-start-column="41" selection-end-line="254" selection-end-column="41" />
+            <state relative-caret-position="459">
+              <caret line="200" column="28" selection-start-line="200" selection-start-column="28" selection-end-line="200" selection-end-column="28" />
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="207" column="11" selection-start-line="169" selection-start-column="6" selection-end-line="207" selection-end-column="11" />
-              <folding>
-                <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wanted.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn/templates/wanted.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
-              <folding>
-                <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap_table_test.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn/templates/bootstrap_table_test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
-              <folding>
-                <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,44 +53,44 @@
       <file leaf-file-name="get_data_from_db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learn/my_db_tools/get_data_from_db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
-                <marker date="1471678671292" expanded="true" signature="95:376" ph="select b.*,c... galleryurl" />
-                <marker date="1471678671292" expanded="true" signature="95:434" ph="select b.*,c... galleryurl" />
-                <marker date="1471678671292" expanded="true" signature="141:311" ph="select galle... missing_value_kw_items" />
-                <marker date="1471678671292" expanded="true" signature="1504:1522" ph="select galle... missing_value_kw_items" />
-                <marker date="1471678671292" expanded="true" signature="1504:1843" ph="select b.*,c... galleryurl" />
-                <marker date="1471678671292" expanded="true" signature="1504:1860" ph="select b.*,c... galleryurl" />
-                <marker date="1471678671292" expanded="true" signature="1550:1720" ph="select galle... " />
-                <marker date="1471678671292" expanded="true" signature="2909:2965" ph="select Nid,k... category_kw_dict" />
-                <marker date="1471678671292" expanded="true" signature="2909:2983" ph="select Nid,k... category_kw_dict" />
-                <marker date="1471678671292" expanded="true" signature="3442:3495" ph="insert into is_recommend... " />
-                <marker date="1471678671292" expanded="true" signature="3517:3530" ph="select * fro... " />
-                <marker date="1471678671292" expanded="true" signature="3517:3559" ph="select * fro... is_recommend" />
-                <marker date="1471678671292" expanded="true" signature="3923:4080" ph="select wan.o... is_recommend" />
-                <marker date="1471678671292" expanded="true" signature="4103:4152" ph="select itemi... is_recommend" />
-                <marker date="1471678671292" expanded="true" signature="4427:4509" ph="select title... " />
-                <marker date="1471678671292" expanded="true" signature="5199:5652" ph="select b.*,c... galleryurl" />
-                <marker date="1471678671292" expanded="true" signature="5262:5495" ph="select galle... missing_value_kw_items" />
-                <marker date="1471678671292" expanded="true" signature="7008:7072" ph="select user_... shop_user_dict" />
-                <marker date="1471678671292" expanded="true" signature="7681:7724" ph="alter table " />
-                <marker date="1471678671292" expanded="true" signature="7681:7728" ph="alter table missing_value_category_items... " />
-                <marker date="1471678671292" expanded="true" signature="7946:8006" ph="select useri... owner_kw_items" />
-                <marker date="1471678671292" expanded="true" signature="7946:8016" ph="select useri... missing_value_kw_items" />
-                <marker date="1471678671292" expanded="true" signature="8046:8139" ph="insert into shop_user_dict... " />
-                <marker date="1471678671292" expanded="true" signature="8161:8208" ph="select * fro... shop_user_dict" />
+                <marker date="1471924723293" expanded="true" signature="95:353" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="95:375" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="95:534" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="95:609" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="95:637" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="158:337" ph="select galle... missing_value_kw_items" />
+                <marker date="1471924723293" expanded="true" signature="158:353" ph="select galle... missing_value_kw_items" />
+                <marker date="1471924723293" expanded="true" signature="1766:1784" ph="select galle... missing_value_kw_items" />
+                <marker date="1471924723293" expanded="true" signature="1766:2105" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="1766:2122" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="1812:1982" ph="select galle... " />
+                <marker date="1471924723293" expanded="true" signature="3171:3227" ph="select Nid,k... category_kw_dict" />
+                <marker date="1471924723293" expanded="true" signature="3171:3245" ph="select Nid,k... category_kw_dict" />
+                <marker date="1471924723293" expanded="true" signature="3705:3758" ph="insert into is_recommend... " />
+                <marker date="1471924723293" expanded="true" signature="3780:3793" ph="select * fro... " />
+                <marker date="1471924723293" expanded="true" signature="3780:3822" ph="select * fro... is_recommend" />
+                <marker date="1471924723293" expanded="true" signature="4186:4343" ph="select wan.o... is_recommend" />
+                <marker date="1471924723293" expanded="true" signature="4366:4415" ph="select itemi... is_recommend" />
+                <marker date="1471924723293" expanded="true" signature="4694:4776" ph="select title... " />
+                <marker date="1471924723293" expanded="true" signature="5549:5616" ph="select title... all_shop_items" />
+                <marker date="1471924723293" expanded="true" signature="6432:7049" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="6432:7077" ph="select b.*,c... galleryurl" />
+                <marker date="1471924723293" expanded="true" signature="6495:6892" ph="select galle... missing_value_kw_items" />
+                <marker date="1471924723293" expanded="true" signature="8433:8497" ph="select user_... shop_user_dict" />
+                <marker date="1471924723293" expanded="true" signature="9072:9620" ph="SELECT detai... itemid" />
+                <marker date="1471924723293" expanded="true" signature="9116:9548" ph="SELECT items... all_shop_items" />
+                <marker date="1471924723293" expanded="true" signature="9116:9549" ph="SELECT items... all_shop_items" />
+                <marker date="1471924723293" expanded="true" signature="9116:9551" ph="SELECT items... all_shop_items" />
+                <marker date="1471924723293" expanded="true" signature="10809:10852" ph="alter table " />
+                <marker date="1471924723293" expanded="true" signature="10809:10856" ph="alter table missing_value_category_items... " />
+                <marker date="1471924723293" expanded="true" signature="11074:11134" ph="select useri... owner_kw_items" />
+                <marker date="1471924723293" expanded="true" signature="11074:11144" ph="select useri... missing_value_kw_items" />
+                <marker date="1471924723293" expanded="true" signature="11174:11267" ph="insert into shop_user_dict... " />
+                <marker date="1471924723293" expanded="true" signature="11289:11336" ph="select * fro... shop_user_dict" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shop.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/learn/templates/shop.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="185" column="8" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -134,21 +98,48 @@
       <file leaf-file-name="ysl.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learn/templates/ysl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+            <state relative-caret-position="248">
+              <caret line="50" column="19" selection-start-line="43" selection-start-column="8" selection-end-line="50" selection-end-column="19" />
               <folding>
-                <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#2101#2452#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hs_wq.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn/templates/hs_wq.html">
+      <file leaf-file-name="change_data_in_db.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/learn/my_db_tools/change_data_in_db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2889">
-              <caret line="224" column="11" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="11" />
+            <state relative-caret-position="566">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding>
+                <marker date="1471935965408" expanded="true" signature="100:176" ph="insert into category_kw_dict... " />
+                <marker date="1471935965408" expanded="true" signature="522:597" ph="insert into shop_user_dict... " />
+                <marker date="1471935965408" expanded="true" signature="900:948" ph="delete from " />
+                <marker date="1471935965408" expanded="true" signature="1291:1337" ph="update is_re... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap-table-editable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/learn/static/assets/bootstrap-table/src/extensions/editable/bootstrap-table-editable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="127" column="36" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ymm.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/learn/templates/ymm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+              <folding>
+                <element signature="e#2101#2452#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,28 +173,35 @@
         <option value="$PROJECT_DIR$/learn/templates/home.html" />
         <option value="$PROJECT_DIR$/learn/tools.py" />
         <option value="$PROJECT_DIR$/learn/static/assets/bootstrap-table/src/extensions/export/bootstrap-table-export.js" />
-        <option value="$PROJECT_DIR$/learn/templates/test.html" />
-        <option value="$PROJECT_DIR$/learn/my_db_tools/change_data_in_db.py" />
         <option value="$PROJECT_DIR$/learn/templates/index.html" />
-        <option value="$PROJECT_DIR$/learn/templates/chy.html" />
-        <option value="$PROJECT_DIR$/learn/templates/hs_sxb.html" />
-        <option value="$PROJECT_DIR$/learn/templates/hs_sxz.html" />
-        <option value="$PROJECT_DIR$/learn/templates/hs_test.html" />
-        <option value="$PROJECT_DIR$/learn/templates/hs_wq.html" />
-        <option value="$PROJECT_DIR$/learn/templates/hs_ymm.html" />
-        <option value="$PROJECT_DIR$/learn/templates/hs_ysl.html" />
-        <option value="$PROJECT_DIR$/learn/templates/sxb.html" />
-        <option value="$PROJECT_DIR$/learn/templates/sxz.html" />
-        <option value="$PROJECT_DIR$/learn/templates/ymm.html" />
-        <option value="$PROJECT_DIR$/learn/templates/ysl.html" />
-        <option value="$PROJECT_DIR$/learn/templates/hs_chy.html" />
-        <option value="$PROJECT_DIR$/learn/templates/wq.html" />
-        <option value="$PROJECT_DIR$/firstsite/urls.py" />
-        <option value="$PROJECT_DIR$/learn/views.py" />
-        <option value="$PROJECT_DIR$/learn/templates/wanted.html" />
         <option value="$PROJECT_DIR$/learn/templates/bootstrap_table_test.html" />
-        <option value="$PROJECT_DIR$/learn/my_db_tools/get_data_from_db.py" />
         <option value="$PROJECT_DIR$/learn/templates/shop.html" />
+        <option value="$PROJECT_DIR$/learn/my_db_tools/get_data_from_db.py" />
+        <option value="$PROJECT_DIR$/learn/static/assets/bootstrap-table/src/extensions/editable/bootstrap-table-editable.js" />
+        <option value="$PROJECT_DIR$/firstsite/urls.py" />
+        <option value="$PROJECT_DIR$/learn/my_db_tools/change_data_in_db.py" />
+        <option value="$PROJECT_DIR$/learn/templates/wanted.html" />
+        <option value="$PROJECT_DIR$/learn/views.py" />
+        <option value="$PROJECT_DIR$/learn/templates/test.html" />
+        <option value="$PROJECT_DIR$/learn/templates/ysl.html" />
+        <option value="$PROJECT_DIR$/learn/templates/wq.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sxz.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sxb.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sp_ysl.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sp_ymm.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sp_wq.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sp_sxz.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sp_sxb.html" />
+        <option value="$PROJECT_DIR$/learn/templates/sp_chy.html" />
+        <option value="$PROJECT_DIR$/learn/templates/hs_ysl.html" />
+        <option value="$PROJECT_DIR$/learn/templates/hs_ymm.html" />
+        <option value="$PROJECT_DIR$/learn/templates/hs_wq.html" />
+        <option value="$PROJECT_DIR$/learn/templates/hs_test.html" />
+        <option value="$PROJECT_DIR$/learn/templates/hs_sxz.html" />
+        <option value="$PROJECT_DIR$/learn/templates/hs_sxb.html" />
+        <option value="$PROJECT_DIR$/learn/templates/hs_chy.html" />
+        <option value="$PROJECT_DIR$/learn/templates/chy.html" />
+        <option value="$PROJECT_DIR$/learn/templates/ymm.html" />
       </list>
     </option>
   </component>
@@ -323,24 +321,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="learn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_db_tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="firstsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="firstsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="firstsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -362,7 +342,7 @@
       <recent name="C:\Users\Administrator\Envs\web_app\firstsite\learn\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.get_data_from_db">
+  <component name="RunManager" selected="Python.change_data_in_db">
     <configuration default="false" name="my_own_sql_tools" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -719,8 +699,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.get_data_from_db" />
-        <item index="1" class="java.lang.String" itemvalue="Python.change_data_in_db" />
+        <item index="0" class="java.lang.String" itemvalue="Python.change_data_in_db" />
+        <item index="1" class="java.lang.String" itemvalue="Python.get_data_from_db" />
         <item index="2" class="java.lang.String" itemvalue="Python.views" />
         <item index="3" class="java.lang.String" itemvalue="Python.my_own_sql_tools" />
         <item index="4" class="java.lang.String" itemvalue="Django tests.Test: learn.templates.home.html" />
@@ -752,24 +732,24 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.098958336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.096354164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1448203" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3065539" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3625793" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -805,60 +785,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/learn/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#41#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/my_own_sql_tools.py" />
-    <entry file="file://$PROJECT_DIR$/firstsite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/firstsite/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/learn/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -931,13 +862,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/learn/templates/test_jing.html" />
-    <entry file="file://$PROJECT_DIR$/learn/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/learn/static/assets/examples.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -959,34 +883,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/table_editor_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/learn/templates/table_test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="65" column="61" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/home_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,68 +894,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/my_db_tools/change_data_in_db.py">
+    <entry file="file://$PROJECT_DIR$/learn/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <marker date="1471660252242" expanded="true" signature="100:176" ph="insert into category_kw_dict... " />
-            <marker date="1471660252242" expanded="true" signature="522:597" ph="insert into shop_user_dict... " />
-          </folding>
+        <state relative-caret-position="223">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/chy.html">
+    <entry file="file://$PROJECT_DIR$/learn/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="207" column="11" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="27">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/hs_sxz.html">
+    <entry file="file://$PROJECT_DIR$/learn/templates/home_test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="224" column="11" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/hs_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="225" column="11" selection-start-line="225" selection-start-column="11" selection-end-line="225" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/hs_ymm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="224" column="11" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/hs_ysl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="224" column="11" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="54">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1063,168 +922,284 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/sxz.html">
+    <entry file="file://$PROJECT_DIR$/learn/templates/bootstrap_table_test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="207" column="11" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/ymm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="207" column="11" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/ysl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/sxb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3625">
-          <caret line="207" column="11" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/hs_sxb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4183">
-          <caret line="224" column="11" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/wq.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/hs_chy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/hs_wq.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2889">
-          <caret line="224" column="11" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="11" />
+        <state relative-caret-position="2133">
+          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/firstsite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="467">
+          <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/learn/my_db_tools/change_data_in_db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="207" column="11" selection-start-line="169" selection-start-column="6" selection-end-line="207" selection-end-column="11" />
+        <state relative-caret-position="566">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1471935965408" expanded="true" signature="100:176" ph="insert into category_kw_dict... " />
+            <marker date="1471935965408" expanded="true" signature="522:597" ph="insert into shop_user_dict... " />
+            <marker date="1471935965408" expanded="true" signature="900:948" ph="delete from " />
+            <marker date="1471935965408" expanded="true" signature="1291:1337" ph="update is_re... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/bootstrap_table_test.html">
+    <entry file="file://$PROJECT_DIR$/learn/templates/table_editor_test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+        <state relative-caret-position="567">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/wq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/my_db_tools/get_data_from_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1471924723293" expanded="true" signature="95:353" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="95:375" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="95:534" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="95:609" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="95:637" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="158:337" ph="select galle... missing_value_kw_items" />
+            <marker date="1471924723293" expanded="true" signature="158:353" ph="select galle... missing_value_kw_items" />
+            <marker date="1471924723293" expanded="true" signature="1766:1784" ph="select galle... missing_value_kw_items" />
+            <marker date="1471924723293" expanded="true" signature="1766:2105" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="1766:2122" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="1812:1982" ph="select galle... " />
+            <marker date="1471924723293" expanded="true" signature="3171:3227" ph="select Nid,k... category_kw_dict" />
+            <marker date="1471924723293" expanded="true" signature="3171:3245" ph="select Nid,k... category_kw_dict" />
+            <marker date="1471924723293" expanded="true" signature="3705:3758" ph="insert into is_recommend... " />
+            <marker date="1471924723293" expanded="true" signature="3780:3793" ph="select * fro... " />
+            <marker date="1471924723293" expanded="true" signature="3780:3822" ph="select * fro... is_recommend" />
+            <marker date="1471924723293" expanded="true" signature="4186:4343" ph="select wan.o... is_recommend" />
+            <marker date="1471924723293" expanded="true" signature="4366:4415" ph="select itemi... is_recommend" />
+            <marker date="1471924723293" expanded="true" signature="4694:4776" ph="select title... " />
+            <marker date="1471924723293" expanded="true" signature="5549:5616" ph="select title... all_shop_items" />
+            <marker date="1471924723293" expanded="true" signature="6432:7049" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="6432:7077" ph="select b.*,c... galleryurl" />
+            <marker date="1471924723293" expanded="true" signature="6495:6892" ph="select galle... missing_value_kw_items" />
+            <marker date="1471924723293" expanded="true" signature="8433:8497" ph="select user_... shop_user_dict" />
+            <marker date="1471924723293" expanded="true" signature="9072:9620" ph="SELECT detai... itemid" />
+            <marker date="1471924723293" expanded="true" signature="9116:9548" ph="SELECT items... all_shop_items" />
+            <marker date="1471924723293" expanded="true" signature="9116:9549" ph="SELECT items... all_shop_items" />
+            <marker date="1471924723293" expanded="true" signature="9116:9551" ph="SELECT items... all_shop_items" />
+            <marker date="1471924723293" expanded="true" signature="10809:10852" ph="alter table " />
+            <marker date="1471924723293" expanded="true" signature="10809:10856" ph="alter table missing_value_category_items... " />
+            <marker date="1471924723293" expanded="true" signature="11074:11134" ph="select useri... owner_kw_items" />
+            <marker date="1471924723293" expanded="true" signature="11074:11144" ph="select useri... missing_value_kw_items" />
+            <marker date="1471924723293" expanded="true" signature="11174:11267" ph="insert into shop_user_dict... " />
+            <marker date="1471924723293" expanded="true" signature="11289:11336" ph="select * fro... shop_user_dict" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/learn/templates/wanted.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="81">
+          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sxz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="46" column="80" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sp_ysl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sp_ymm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sp_wq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sp_sxz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sp_sxb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sxb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/sp_chy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/shop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-155">
+          <caret line="86" column="46" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/hs_ysl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/hs_ymm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/hs_wq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/hs_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/learn/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="254" column="41" selection-start-line="254" selection-start-column="41" selection-end-line="254" selection-end-column="41" />
+        <state relative-caret-position="459">
+          <caret line="200" column="28" selection-start-line="200" selection-start-column="28" selection-end-line="200" selection-end-column="28" />
           <folding>
             <element signature="e#41#77#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/my_db_tools/get_data_from_db.py">
+    <entry file="file://$PROJECT_DIR$/learn/templates/hs_sxz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+        <state relative-caret-position="458">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/hs_sxb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/hs_chy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="47" column="81" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/chy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/static/assets/bootstrap-table/src/extensions/editable/bootstrap-table-editable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="127" column="36" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/ysl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="50" column="19" selection-start-line="43" selection-start-column="8" selection-end-line="50" selection-end-column="19" />
           <folding>
-            <marker date="1471678671292" expanded="true" signature="95:376" ph="select b.*,c... galleryurl" />
-            <marker date="1471678671292" expanded="true" signature="95:434" ph="select b.*,c... galleryurl" />
-            <marker date="1471678671292" expanded="true" signature="141:311" ph="select galle... missing_value_kw_items" />
-            <marker date="1471678671292" expanded="true" signature="1504:1522" ph="select galle... missing_value_kw_items" />
-            <marker date="1471678671292" expanded="true" signature="1504:1843" ph="select b.*,c... galleryurl" />
-            <marker date="1471678671292" expanded="true" signature="1504:1860" ph="select b.*,c... galleryurl" />
-            <marker date="1471678671292" expanded="true" signature="1550:1720" ph="select galle... " />
-            <marker date="1471678671292" expanded="true" signature="2909:2965" ph="select Nid,k... category_kw_dict" />
-            <marker date="1471678671292" expanded="true" signature="2909:2983" ph="select Nid,k... category_kw_dict" />
-            <marker date="1471678671292" expanded="true" signature="3442:3495" ph="insert into is_recommend... " />
-            <marker date="1471678671292" expanded="true" signature="3517:3530" ph="select * fro... " />
-            <marker date="1471678671292" expanded="true" signature="3517:3559" ph="select * fro... is_recommend" />
-            <marker date="1471678671292" expanded="true" signature="3923:4080" ph="select wan.o... is_recommend" />
-            <marker date="1471678671292" expanded="true" signature="4103:4152" ph="select itemi... is_recommend" />
-            <marker date="1471678671292" expanded="true" signature="4427:4509" ph="select title... " />
-            <marker date="1471678671292" expanded="true" signature="5199:5652" ph="select b.*,c... galleryurl" />
-            <marker date="1471678671292" expanded="true" signature="5262:5495" ph="select galle... missing_value_kw_items" />
-            <marker date="1471678671292" expanded="true" signature="7008:7072" ph="select user_... shop_user_dict" />
-            <marker date="1471678671292" expanded="true" signature="7681:7724" ph="alter table " />
-            <marker date="1471678671292" expanded="true" signature="7681:7728" ph="alter table missing_value_category_items... " />
-            <marker date="1471678671292" expanded="true" signature="7946:8006" ph="select useri... owner_kw_items" />
-            <marker date="1471678671292" expanded="true" signature="7946:8016" ph="select useri... missing_value_kw_items" />
-            <marker date="1471678671292" expanded="true" signature="8046:8139" ph="insert into shop_user_dict... " />
-            <marker date="1471678671292" expanded="true" signature="8161:8208" ph="select * fro... shop_user_dict" />
+            <element signature="e#2101#2452#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/shop.html">
+    <entry file="file://$PROJECT_DIR$/learn/templates/ymm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="185" column="8" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+          <folding>
+            <element signature="e#2101#2452#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

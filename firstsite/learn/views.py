@@ -3,7 +3,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from my_db_tools.get_data_from_db import *
-from my_db_tools.change_data_in_db import insert_kw, insert_user
+from my_db_tools.change_data_in_db import insert_kw, insert_user, remove_item, set_sku
 from django.http import JsonResponse
 import json
 
@@ -110,7 +110,7 @@ def SongXianZhong(request):
     # response_data = dict()
     # response_data['data'] = [item for item in get_data_20_days('sxz')]
     # return JsonResponse(response_data)
-    data = [item for item in get_data_20_days('sxz')]
+    data = [item for item in get_data('sxz')]
     response_data = json.dumps(data)
     return HttpResponse(response_data, content_type='application/json; charset=utf8')
 
@@ -171,6 +171,34 @@ def operation_wanted(request):
         owner = request.POST.get('owner')
         wanted_product(itemid, owner)
         response_data['data'] = [{"itemid": itemid, "owner": owner}]
+        return JsonResponse(response_data)
+    else:
+        response_data['data'] = [{"msg": "Error! Please Post!"}]
+        return JsonResponse(response_data)
+
+
+def operation_remove(request):
+    response_data = dict()
+    if request.method == "POST":
+        # response_data['data'] = [{"msg": "success"}]
+        itemid = request.POST.get('itemid')
+        owner = request.POST.get('owner')
+        remove_item(itemid, owner)
+        response_data['data'] = [{"itemid": itemid, "owner": owner}]
+        return JsonResponse(response_data)
+    else:
+        response_data['data'] = [{"msg": "Error! Please Post!"}]
+        return JsonResponse(response_data)
+
+
+def edit_sku(request):
+    response_data = dict()
+    if request.method == "POST":
+        # response_data['data'] = [{"msg": "success"}]
+        itemid = request.POST.get('itemid')
+        sku = request.POST.get('sku')
+        set_sku(itemid, sku)
+        response_data['data'] = [{"itemid": itemid, "sku": sku}]
         return JsonResponse(response_data)
     else:
         response_data['data'] = [{"msg": "Error! Please Post!"}]
@@ -283,4 +311,70 @@ def add_user_name(request):
     else:
         response_data['data'] = [{"msg": "Error! Please Post!"}]
         return JsonResponse(response_data)
+
+
+def sp_sxb(request):
+    return render(request, 'sp_sxb.html')
+
+
+def sp_wq(request):
+    return render(request, 'sp_wq.html')
+
+
+def sp_sxz(request):
+    return render(request, 'sp_sxz.html')
+
+
+def sp_chy(request):
+    return render(request, 'sp_chy.html')
+
+
+def sp_ymm(request):
+    return render(request, 'sp_ymm.html')
+
+
+def sp_ysl(request):
+    return render(request, 'sp_ysl.html')
+
+
+def sp_test(request):
+    return render(request, 'sp_test.html')
+
+
+def SP_SXB(request):
+    data = [user for user in get_shop_newly_listed('sxb')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_WQ(request):
+    data = [user for user in get_shop_newly_listed('wq')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_CHY(request):
+    data = [user for user in get_shop_newly_listed('chy')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+
+
+def SP_YSL(request):
+    data = [user for user in get_shop_newly_listed('ysl')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_YMM(request):
+    data = [user for user in get_shop_newly_listed('ymm')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_SXZ(request):
+    data = [user for user in get_shop_newly_listed('sxz')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
 

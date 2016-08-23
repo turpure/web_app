@@ -42,17 +42,16 @@ $.ajaxSetup({
 });
         function operateFormatter(value, row, index) {
         return [
-            '<a class="like" href="javascript:void(0)" title="I Want it">',
-            '<i class="glyphicon glyphicon-heart-empty"></i>',
-            '</a>  ',
-            '<a class="remove" href="javascript:void(0)" title="Go away">',
+            '<a class="like" href="javascript:void(0)"   title="I Want it">',
+            '<i class="glyphicon glyphicon-heart-empty"></i></a>',
+            '<a class="remove" href="javascript:void(0)" style="margin-left:30px" title="Go away">',
             '<i class="glyphicon glyphicon-remove"></i>',
             '</a>'
+
         ].join('');
     }
 
         $(function () {
-
             operateEvents = {
         'click .like': function (e, value, row, index) {
             $.ajax({
@@ -63,15 +62,27 @@ $.ajaxSetup({
                 },
                 type:'post',
             });
-            alert('Do you really want: ' + row.itemid + "?");
-            $('#tab').bootstrapTable('refresh');
+            $('#tab').bootstrapTable('remove', {
+                field: 'itemid',
+                values: [row.itemid],
+            });
+{#            alert('Do you really want: ' + row.itemid + "?");#}
+{#            $('#tab').bootstrapTable('refresh');#}
 {#            window.location.reload();#}
 
         },
         'click .remove': function (e, value, row, index) {
+            $.ajax({
+                url:'../operation_remove/',
+                data:{
+                    itemid:row.itemid,
+                    owner:row.owner,
+                },
+                type:'post',
+            });
             $('#tab').bootstrapTable('remove', {
-                field: 'id',
-                values: [row.id]
+                field: 'itemid',
+                values: [row.itemid],
             });
         }
     };
@@ -130,6 +141,7 @@ $.ajaxSetup({
                  field:'pstatus',
                  title:'STATUS',
                  sortable:true,
+                  visible:false,
              },{
                  field:'operate',
                  title:'OPERATE',
@@ -162,7 +174,7 @@ $.ajaxSetup({
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MetaPro</a>
+      <a class="navbar-brand" href="../index">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

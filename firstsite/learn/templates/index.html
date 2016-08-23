@@ -162,7 +162,7 @@ $.ajaxSetup({
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MetaPro</a>
+      <a class="navbar-brand" href="../index">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -171,8 +171,42 @@ $.ajaxSetup({
         <li class="active"><a href="../table">KeyWords <span class="sr-only">(current)</span></a></li>
         <li><a href="../shop">Shops</a></li>
           <li><a href="../wanted">Wanted</a></li>
+           <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hot Sale In Shops <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../sp_hs_sxb" id="sxb">ShangXianBei</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sp_hs_wq">WuQiong</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sp_hs_chy">ChenhaiYue</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../sp_hs_ysl">YangShuLin</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../sp_hs_ymm">YangManMan</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sp_hs_sxz">SongXianZhong</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sp_hs_test">TEST</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Newly Listed In Shops<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../sp_sxb" id="sxb">ShangXianBei</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sp_wq">WuQiong</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sp_chy">ChenhaiYue</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../sp_ysl">YangShuLin</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../sp_ymm">YangManMan</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="../sp_sxz">SongXianZhong</a></li>
+          </ul>
+        </li>
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hot Sale <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hot Sale For KW <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="../hs_sxb" id="sxb">ShangXianBei</a></li>
               <li role="separator" class="divider"></li>
@@ -190,7 +224,7 @@ $.ajaxSetup({
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Newly Listed <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Newly Listed For KW <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="../sxb" id="sxb">ShangXianBei</a></li>
               <li role="separator" class="divider"></li>
@@ -229,47 +263,26 @@ $.ajaxSetup({
   </div><!-- /.container-fluid -->
 </nav>
 </span>
-    <div class="container container-table">
-    <div class="row vertical-center-row">
-    <div class="panel   panel-primary">
-    <div class="panel-heading"></div>
+    <div class="container bs-docs-container">
+      <div class="bs-docs-section">
+          <h1>更新日志</h1>
+          <p>1.增加Hot sale For KW 下拉单。</p>
+          <p>2.原来的owner下拉单改为Newly Listed For KW。</p>
+          <p>3.增加Newly Listed In Shops 下拉单。</p>
+          <p>4.增加shops页面</p>
+          <p>5. 增加wanted页面</p>
+      </div>
+        <div class="bs-docs-section">
+          <h1>使用说明</h1>
+          <p>1.Hot sale For KW里面的产品是对应关键词下近45天上架，最近N天(deltadays)平均销量超过4个的产品。</p>
+          <p>2.Newly Listed For KW里面的产品是对应关键词七天内上架，且平均销量不低于1个的产品。</p>
+            <p>3.Newly Listed In Shops里面的产品是对应中国卖家七天内上架，且平均销量不低于1个的产品。</p>
+            <p>4.shops下的卖家目前是各自关键词下的中国卖家，点击Add按钮即可手动增加卖家。</p>
+            <p>5. wanted下展示的产品为已标记为wanted的产品。</p>
 
-        <div class="container">
-        <h1>Export</h1>
-        <div id="toolbar" class="btn-group">
-            <select class="form-control">
-{#                <option value="">Export Basic</option>#}
-{#                <option value="all">Export All</option>#}
-                <option value="selected">Export Selected</option>
-            </select>
-        </div>
-
-            <table id="tab"></table>
-{#    <table id="tab" data-toggle="table"   data-toolbar="#toolbar"  data-url="product" data-pagination=true data-search=true data-click-to-select="true" data-show-export="true">#}
-{#            <thead>#}
-{#        <tr class="primary">#}
-{#            <th data-field="state" data-checkbox="true"></th>#}
-{#            <th data-field="galleryurl" >IMAGE</th>#}
-{#            <th data-field="title"  data-sortable="true" >TITLE</th>#}
-{#            <th data-field="location" data-sortable="true" >LOCATION</th>#}
-{#            <th data-field="startttime" data-sortable="true" >STARTTIME</th>#}
-{#            <th data-field="quantitysold" data-sortable="true" >SOLD</th>#}
-{#            <th data-field="currentprice" data-sortable="true" >PRICE</th>#}
-{#            <th data-field="currency" data-sortable="true" >CURRENCY</th>#}
-{#            <th data-field="kw" data-sortable="true" >KEYWORDS</th>#}
-{#            <th data-field="curdate" data-sortable="true" >CREATEDDATE</th>#}
-{##}
-{##}
-{#        </tr>#}
-{#    </thead>#}
-</table>
-</div>
-</div>
+      </div>
     </div>
 
-  </div>
-
-</div>
 
 </body>
 </html>
