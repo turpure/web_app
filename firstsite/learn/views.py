@@ -6,7 +6,7 @@ from my_db_tools.get_data_from_db import *
 from my_db_tools.change_data_in_db import insert_kw, insert_user, remove_item, set_sku
 from django.http import JsonResponse
 import json
-
+import re
 
 def index(request):
     return render(request, 'index.html')
@@ -377,4 +377,103 @@ def SP_SXZ(request):
     data = [user for user in get_shop_newly_listed('sxz')]
     response_data = json.dumps(data)
     return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def sp_hs_test(request):
+    return render(request, 'sp_hs_test.html')
+
+
+def sp_hs_sxb(request):
+    return render(request, 'sp_hs_sxb.html')
+
+
+def sp_hs_wq(request):
+    return render(request, 'sp_hs_wq.html')
+
+
+def sp_hs_chy(request):
+    return render(request, 'sp_hs_chy.html')
+
+
+def sp_hs_ysl(request):
+    return render(request, 'sp_hs_ysl.html')
+
+
+def sp_hs_ymm(request):
+    return render(request, 'sp_hs_ymm.html')
+
+
+def sp_hs_sxz(request):
+    return render(request, 'sp_hs_sxz.html')
+
+
+def SP_HS_SXB(request):
+    data = [user for user in get_shop_updated_date('sxb')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_HS_WQ(request):
+    data = [user for user in get_shop_updated_date('wq')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_HS_CHY(request):
+    data = [user for user in get_shop_updated_date('chy')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_HS_YSL(request):
+    data = [user for user in get_shop_updated_date('ysl')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_HS_YMM(request):
+    data = [user for user in get_shop_updated_date('ymm')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def SP_HS_SXZ(request):
+    data = [user for user in get_shop_updated_date('sxz')]
+    response_data = json.dumps(data)
+    return HttpResponse(response_data, content_type='application/json; charset=utf8')
+
+
+def upload(request):
+    response_data = dict()
+    if request.method == "POST":
+        # response_data['data'] = [{"msg": "success"}]
+        result = request.POST.get('result')
+
+        data = [name_kw.split('\t') for name_kw in [res for res in re.findall(r"(\w.*)\r\n", result)]]
+        map(lambda owner_kw: insert_kw(owner_kw[0], owner_kw[1]), data)
+        response_data = json.dumps(data)
+        return HttpResponse(response_data, content_type='application/json; charset=utf8')
+        # return JsonResponse(response_data)
+    else:
+        response_data['data'] = [{"msg": "Error! Please Post!"}]
+        return JsonResponse(response_data)
+
+
+
+# def upload(request):
+#     response_data = dict()
+#     if request.method == "POST":
+#         # response_data['data'] = [{"msg": "success"}]
+#         res = request.POST.get('result')
+#         response_data['data'] = [{"data": res, }]
+#         return JsonResponse(response_data)
+#     else:
+#         response_data['data'] = [{"msg": "Error! Please Post!"}]
+#         return JsonResponse(response_data)
+
+
+
+
+
+
 

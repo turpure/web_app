@@ -80,6 +80,19 @@ urlpatterns = [
     url(r'^sp_ysl/SP_YSL', learn_views.SP_YSL, name='SP_YSL'),
     url(r'^sp_ymm/SP_YMM', learn_views.SP_YMM, name='SP_YMM'),
     url(r'^sp_sxz/SP_SXZ', learn_views.SP_SXZ, name='SP_SXZ'),
-
+    url(r'^sp_hs_test/$', learn_views.sp_hs_test, name='sh_hs_test'),
+    url(r'^sp_hs_sxb/$', learn_views.sp_hs_sxb, name='sp_hs_sxb'),
+    url(r'^sp_hs_wq/$', learn_views.sp_hs_wq, name='sp_hs_wq'),
+    url(r'^sp_hs_chy/$', learn_views.sp_hs_chy, name='sp_hs_chy'),
+    url(r'^sp_hs_ysl/$', learn_views.sp_hs_ysl, name='sp_hs_ysl'),
+    url(r'^sp_hs_ymm/$', learn_views.sp_hs_ymm, name='sp_hs_ymm'),
+    url(r'^sp_hs_sxz/$', learn_views.sp_hs_sxz, name='sp_hs_sxz'),
+    url(r'^sp_hs_sxb/SP_HS_SXB', learn_views.SP_HS_SXB, name='SP_HS_SXB'),
+    url(r'^sp_hs_wq/SP_HS_WQ', learn_views.SP_HS_WQ, name='SP_HS_WQ'),
+    url(r'^sp_hs_chy/SP_HS_CHY', learn_views.SP_HS_CHY, name='SP_HS_CHY'),
+    url(r'^sp_hs_ysl/SP_HS_YSL', learn_views.SP_HS_YSL, name='SP_HS_YSL'),
+    url(r'^sp_hs_ymm/SP_HS_YMM', learn_views.SP_HS_YMM, name='SP_HS_YMM'),
+    url(r'^sp_hs_sxz/SP_HS_SXZ', learn_views.SP_HS_SXZ, name='SP_HS_SXZ'),
+    url(r'^table/upload', learn_views.upload, name='upload'),
 
 ]

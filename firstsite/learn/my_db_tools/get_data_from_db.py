@@ -8,7 +8,7 @@ def get_data(owner):
             " (select galleryurl,title,location,startttime,quantitysold," \
             "currentprice,itemid,currency,curdate from %s_kw_items " \
             "where datediff(curdate,startttime) BETWEEN 1 and 8 " \
-            "and (quantitysold+0)/datediff(curdate,startttime)>=1 ORDER by quantitysold+0 desc) as b" \
+            "and (quantitysold+0)/datediff(curdate,startttime)>0.5 ORDER by curdate desc,quantitysold+0 desc) as b" \
             " inner JOIN %s_category_items as cat on b.itemid=cat.itemid " \
             "LEFT JOIN  is_recommend on is_recommend.itemid=cat.itemid and is_recommend.pstatus!=1 " % (owner, owner)
     try:
@@ -74,7 +74,7 @@ def get_kw_data():
 
 
 def wanted_product(itemid, owner):
-    insert_query = "insert into is_recommend values (%s,1,%s,'___',now()) "
+    insert_query = "insert into is_recommend values (%s,1,%s,'',now()) "
     check_query = 'select * from is_recommend where itemid=%s'
     try:
         con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='', db='ebaydata');
@@ -169,7 +169,7 @@ def get_updated_date(owner):
 
 
 def get_shop_data():
-    query = 'select user_name,owner,curdate,feedbackscore from shop_user_dict'
+    query = 'select user_name,owner,curdate,feedbackscore from shop_user_dict ORDER BY curdate desc'
     try:
         con = MySQLdb.connect(host='192.168.0.134', user='root',passwd='',db='ebaydata')
         cur = con.cursor(MySQLdb.cursors.DictCursor)
@@ -185,7 +185,7 @@ def get_shop_data():
 
 
 def get_shop_newly_listed(owner):
-    query = "SELECT detail.*,is_recommend.pstatus from  (SELECT items.hitcount,items.itemid,items.galleryurl,items.title,items.location,items.startttime,items.quantitysold,items.currentprice,items.currency,items.curdate,dict.`owner` FROM all_shop_items AS items INNER JOIN shop_user_dict AS dict ON items.userid = dict.user_name WHERE	dict.`owner` = \'%s\' AND datediff(items.curdate,items.startttime) BETWEEN 0 and 8 AND (items.quantitysold+0)/datediff(items.curdate,items.startttime) >= 1) as detail LEFT JOIN is_recommend on detail.itemid=is_recommend.itemid" % owner
+    query = "SELECT detail.*,is_recommend.pstatus from  (SELECT items.userid,items.hitcount,items.itemid,items.galleryurl,items.title,items.location,items.startttime,items.quantitysold,items.currentprice,items.currency,items.curdate,dict.`owner` FROM all_shop_items AS items INNER JOIN shop_user_dict AS dict ON items.userid = dict.user_name and dict.`owner` = \'%s\' AND datediff(items.curdate,items.startttime) BETWEEN 0 and 8 AND (items.quantitysold+0)/datediff(items.curdate,items.startttime) >= 0.5) as detail LEFT JOIN is_recommend on detail.itemid=is_recommend.itemid" % owner
     # print query
     # AND items.listduration = 'GTC'
     try:
@@ -211,6 +211,36 @@ def get_shop_newly_listed(owner):
         con.close()
     except Exception as e:
         print e
+
+
+def get_shop_updated_date(owner):
+    query = "SELECT detail.*,is_recommend.pstatus from  (SELECT items.userid,items.deltahit,items.itemid,items.galleryurl,items.title,items.location,items.startttime,items.deltasold,items.deltadays,items.currentprice,items.currency,items.curdate,dict.`owner` FROM all_shop_items  AS items INNER JOIN shop_user_dict AS dict ON items.userid = dict.user_name and items.deltasold>0 and ((items.quantitysold+0)/datediff(items.curdate,items.startttime)) >((items.deltasold+0)/items.deltadays) and dict.`owner` = \'%s\' ) as detail LEFT JOIN is_recommend on detail.itemid=is_recommend.itemid and is_recommend.pstatus!=1" % owner
+    try:
+        con = MySQLdb.connect(host='192.168.0.134', user='root', passwd='', db='ebaydata')
+        cur = con.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute(query)
+        for item in cur.fetchall():
+            item['title'] = unicode(
+                "<a href='http://www.ebay.com/itm/" + item['itemid'] + "' target='_Blank'>" + item['title'] + "</a>",
+                errors='replace')
+            temp_img = "<img src='" + item['galleryurl'] + "' width='80' height='80'>"
+            item['galleryurl'] = unicode(
+                "<a href='http://www.ebay.com/itm/" + item['itemid'] + "' target='_Blank'>" + temp_img + "</a>",
+                errors='replace')
+            item['startttime'] = str(item['startttime'])
+            item['deltasold'] = int(item['deltasold'])
+            item['location'] = unicode(item['location'], errors='replace')
+            item['owner'] = owner
+            item['curdate'] = str(item['curdate'])[:10]
+            item['deltasold'] = int(item['deltasold'])
+            item['deltahit'] = int(item['deltahit'])
+            if item['pstatus'] == 1:
+                item['pstatus'] = 'wanted'
+            yield item
+        con.close()
+    except Exception as e:
+        print e
+
 
 
 def alter_table(owner):
@@ -253,6 +283,6 @@ if __name__ == "__main__":
 
     # get_updated_date('test')
     # pass
-    print [i for i in get_shop_newly_listed('ysl')]
-
+    # print [i for i in get_shop_newly_listed('ysl')]
+    print [i for i in get_shop_updated_date('wq')]
 
